@@ -19,3 +19,7 @@ The environment setups up two subnets. One private that has a NAT interface and 
 
 ## Remember to destroy
 * terraform destroy
+
+## Security Note
+
+This has a hard coded password. This setup is not intended to be used in production environments as it. Reset the password and secret. 
