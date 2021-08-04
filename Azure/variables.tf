@@ -1,6 +1,13 @@
+variable region {
+    description = "The region that we want to use."
+    type = string
+    default = "East US"
+}
+
 variable deployment_environment {
     description = "The deployment environment. Can be DEV TEST PROD"
     type = string
+    default = "DEV"
 }
 
 variable environment_settings {
