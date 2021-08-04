@@ -7,13 +7,14 @@ The environment setups up two servers, one for Elasticsearch and one 
 * Make the default password dynamic and random
 * Comments in code
 * Open ports to allow ingest of certain log events - Right now I manually add via the Azure Portal
-
+* Create an output to display IP's. 
 
 # Instructions 
 * Open main.tf and adjust the count for the Graylog Server.
 * terraform init
 * terraform plan
 * terraform apply
+
 
 
 ## Remember to destroy
