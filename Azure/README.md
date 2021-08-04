@@ -1,20 +1,19 @@
-# Graylog Terraform Environment 
+# Graylog Azure Terraform Environment 
 
-The environment setups up two subnets. One private that has a NAT interface and hosts the ElasticSearch database. The public database hosts an elastic IP for Graylog and allows ports 9000 in. Connects to ElasticSearch in the private domain.
+The environment setups up two servers, one for Elasticsearch and one for Graylog Traffic rule allows port 25 on both servers and port 9000 on Graylog. I do not recommending running this in a production environment. 
 
 ## TODO's
 
-*Fix the InstallGraylog.sh script. There were some changes to the Graylog server.conf file that I had to make to get Graylog to work. I have those in the TODO's. Need to update the script.
-*Comments
-*Open ports to allow ingest of certain services
+* Make the default password dynamic and random
+* Comments in code
+* Open ports to allow ingest of certain log events - Right now I manually add via the Azure Portal
 
 
 # Instructions 
-
+* Open main.tf and adjust the count for the Graylog Server.
 * terraform init
 * terraform plan
 * terraform apply
-    * At this time - updat the graylogserver.conf to have the correct host/uri bindings. Restart Graylog-server after update.
 
 
 ## Remember to destroy
@@ -22,4 +21,6 @@ The environment setups up two subnets. One private that has a NAT interface and 
 
 ## Security Note
 
-This has a hard coded password. This setup is not intended to be used in production environments as it. Reset the password and secret. 
+* This has a hard coded password. This setup is not intended to be used in production environments as it. Reset the password and secret. 
+* Do not use this in production environment. You should review security policies and think about SSH security along with TLS security. 
+

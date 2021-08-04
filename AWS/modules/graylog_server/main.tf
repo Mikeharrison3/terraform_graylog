@@ -17,7 +17,6 @@ data "template_file" "init" {
   template = file("InstallGraylog.sh.tpl")
 
   vars = {
-    test_var = "testdot.txt"
     elasticIP = var.elasticIP
     publicIP = var.publicIP
     privateIP = var.privateIP
